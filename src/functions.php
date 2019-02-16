@@ -87,7 +87,7 @@ function task3($one, $two)
 {
     if (!is_int($one) || !is_int($two)) {
         echo 'Переданы значения, не удовлетворяющие условиям задачи';
-    } elseif (is_int($one) && is_int($two)) {
+    } else {
         echo '<table>';
         $row = $one;
         $col = $two;
