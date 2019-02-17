@@ -1,8 +1,8 @@
 <?php
 $array = ['string_1', 'string_2', 'string_3'];
-function task1($arr)
+function task1($arr, $flag = false)
 {
-    if (in_array(1, func_get_args())) {
+    if ($flag) {
         return implode($arr);
     }
     for ($i = 0; $i < sizeof($arr); $i++) {
@@ -83,22 +83,19 @@ function task2()
     }
 }
 
-function task3($one, $two)
+function task3($row, $col)
 {
-    if (!is_int($one) || !is_int($two)) {
+    if ($row < 1 || $col < 1) {
         echo 'Переданы значения, не удовлетворяющие условиям задачи';
-    } else {
-        echo '<table>';
-        $row = $one;
-        $col = $two;
-        for ($i = 1; $i <= $row; $i++) {
-            echo '<tr>';
-            for ($j = 1; $j <= $col; $j++) {
-                echo '<td style="border: 1px solid; text-align: center; padding: 5px">' . $j * $i . '</td>';
-            }
+        return null;
+    }
+    echo '<table>';
+    for ($i = 1; $i <= $row; $i++) {
+        echo '<tr>';
+        for ($j = 1; $j <= $col; $j++) {
+            echo '<td style="border: 1px solid; text-align: center; padding: 5px">' . $j * $i . '</td>';
         }
         echo '</tr>';
     }
     echo '</table>';
-
 }
