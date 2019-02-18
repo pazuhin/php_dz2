@@ -99,3 +99,31 @@ function task3($row, $col)
     }
     echo '</table>';
 }
+
+function task4()
+{
+    echo date('d.m.Y H:i') . "<br>";
+    $date = '24.02.2016 00:00:00';
+    echo strtotime($date);
+}
+
+function task5()
+{
+    $str = 'Карл у Клары украл Кораллы' . "<br>";
+    echo str_replace('К', '', $str);
+    $str1 = 'Две бутылки лимонада';
+    echo $str1 . "<br>";
+    echo 'Новая стока : ' . str_replace('Две', 'Три', $str1);
+}
+
+function task6()
+{
+    $test = 'Hello again';
+    file_put_contents('test.txt', $test);
+}
+
+$fileName = 'test.txt';
+function task7($fileName)
+{
+    echo file_get_contents($fileName);
+}
